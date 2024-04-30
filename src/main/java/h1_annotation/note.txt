@@ -1,0 +1,9 @@
+INTERVIEW Q:
+ Requirements for Entity class
+    1. @Entity annotation
+    2. @Id annotation
+    3. getters and setters
+    4. constructor
+    5. cannot be final, we'll be updating the fields
+    6. @Table annotation
+    7. @Column annotation
