@@ -12,7 +12,7 @@ public class Dairy04 {
     private String name;
 
     @OneToOne
-    @JoinColumn
+    @JoinColumn (name = "std_id")
     private Student04 student;
 
     public int getId() {

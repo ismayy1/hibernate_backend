@@ -24,12 +24,15 @@ public class RunnerSave04 {
         Dairy04 dairy1 = new Dairy04();
         dairy1.setId(101);
         dairy1.setName("Mikail's dairy");
-        dairy1.setStudent(student01);
+//        dairy1.setStudent(student01);
 
         Dairy04 dairy2 = new Dairy04();
         dairy2.setId(102);
         dairy2.setName("Tamara's dairy");
-        dairy2.setStudent(student02);
+//        dairy2.setStudent(student02);
+
+//        student01.setDairy(dairy1);   // since in Student class we used mappedBy, settings field will be done by Dairy side
+//        student02.setDairy(dairy2);
 
 
 

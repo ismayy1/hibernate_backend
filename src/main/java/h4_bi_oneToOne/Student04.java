@@ -15,8 +15,8 @@ public class Student04 {
 
     private int grade;
 
-    @OneToOne
-    @JoinColumn (name = "std_id")
+    @OneToOne(mappedBy = "student") // don't create column on this table
+//    @JoinColumn
     private Dairy04 dairy;
 
     public int getId() {
