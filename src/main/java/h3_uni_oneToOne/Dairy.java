@@ -12,7 +12,7 @@ public class Dairy {
     private String name;
 
     @OneToOne
-    @JoinColumn (name = "std_id")   // id of joined table will be named as std_id
+    @JoinColumn (name = "std_id", unique = true)   // id of joined table will be named as std_id
     private Student03 student03;
 
     // getter-setter
