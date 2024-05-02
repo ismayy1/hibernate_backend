@@ -16,7 +16,7 @@ public class Student04 {
     private int grade;
 
     @OneToOne(mappedBy = "student") // don't create column on this table
-//    @JoinColumn
+    // if you don't use mappedBy here, it'll add column named dairy_id in student table
     private Dairy04 dairy;
 
     public int getId() {
@@ -57,7 +57,7 @@ public class Student04 {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
-                ", dairy=" + dairy +
+//                ", dairy=" + dairy +  // to avoid recursive call
                 '}';
     }
 }
