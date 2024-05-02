@@ -1,23 +1,19 @@
 package h4_bi_oneToOne;
 
-import h3_uni_oneToOne.Dairy;
-
 import javax.persistence.*;
 
 @Entity
-@Table (name = "t_student04")
-public class Student04 {
+@Table (name = "t_dairy04")
+public class Dairy04 {
 
     @Id
     private int id;
 
     private String name;
 
-    private int grade;
-
     @OneToOne
-    @JoinColumn (name = "std_id")
-    private Dairy04 dairy;
+    @JoinColumn
+    private Student04 student;
 
     public int getId() {
         return id;
@@ -27,12 +23,8 @@ public class Student04 {
         return name;
     }
 
-    public int getGrade() {
-        return grade;
-    }
-
-    public Dairy04 getDairy() {
-        return dairy;
+    public Student04 getStudent() {
+        return student;
     }
 
     public void setId(int id) {
@@ -43,21 +35,16 @@ public class Student04 {
         this.name = name;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    public void setDairy(Dairy04 dairy) {
-        this.dairy = dairy;
+    public void setStudent(Student04 student) {
+        this.student = student;
     }
 
     @Override
     public String toString() {
-        return "Student04{" +
+        return "Dairy04{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", grade=" + grade +
-                ", dairy=" + dairy +
+                ", student=" + student +
                 '}';
     }
 }
