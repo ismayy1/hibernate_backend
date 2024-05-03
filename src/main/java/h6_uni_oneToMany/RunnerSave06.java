@@ -42,6 +42,12 @@ public class RunnerSave06 {
         book4.setId(104);
         book4.setName("Amena's Book");
 
+        student1.getBookList().add(book1);
+        student1.getBookList().add(book2);
+
+        student2.getBookList().add(book4);
+        student2.getBookList().add(book4);
+
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student06.class).addAnnotatedClass(Book06.class);
