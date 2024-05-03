@@ -20,11 +20,11 @@ public class RunnerSave06 {
         student2.setName("Amena");
         student2.setGrade(90);
 
-
         Student06 student3 = new Student06();
         student3.setId(1003);
         student3.setName("Ismail");
         student3.setGrade(87);
+
 
         Book06 book1 = new Book06();
         book1.setId(101);
@@ -42,24 +42,31 @@ public class RunnerSave06 {
         book4.setId(104);
         book4.setName("Amena's Book");
 
+        // adding books to the students
         student1.getBookList().add(book1);
         student1.getBookList().add(book2);
 
-        student2.getBookList().add(book4);
+        student2.getBookList().add(book3);
         student2.getBookList().add(book4);
 
 
-        Configuration con = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Student06.class).addAnnotatedClass(Book06.class);
+        Configuration con = new Configuration()
+                .configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Student06.class)
+                .addAnnotatedClass(Book06.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
 
+        session.save(book1);
+        session.save(book2);
+        session.save(book3);
+        session.save(book4);
+
         session.save(student1);
         session.save(student2);
         session.save(student3);
-
 
 
         tx.commit();

@@ -17,6 +17,7 @@ public class Student06 {
     private int grade;
 
     @OneToMany
+    @JoinColumn (name = "std_id")
     private List<Book06> bookList = new ArrayList<>();
 
     //getter-setter
