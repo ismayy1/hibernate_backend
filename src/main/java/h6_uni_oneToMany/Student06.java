@@ -17,7 +17,13 @@ public class Student06 {
     private int grade;
 
     @OneToMany
-    @JoinColumn (name = "std_id")
+    @JoinColumn (name = "std_id")   // in OneToMany relation, this column will be created in Many side
+    /*
+        - if you don't add join column, since it can't add many foreign keys
+        to one cell, by default it'll create third table to join these two tables.
+        - @JoinColumn will add new column to the Many side to store foreign keys of
+        One side. In this way, the third table won't be created.
+     */
     private List<Book06> bookList = new ArrayList<>();
 
     //getter-setter
