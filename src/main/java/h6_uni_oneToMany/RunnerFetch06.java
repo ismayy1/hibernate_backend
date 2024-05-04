@@ -37,9 +37,14 @@ public class RunnerFetch06 {
 //        System.out.println("book2 = " + book2);
 
         //TASK: using hql bring books of student whose id is 1002
+        System.out.println("=================== Same result with HQL ====================");
         String hql2 = "SELECT b.id, b.name FROM Student06 s INNER JOIN s.bookList b WHERE s.id = 1002";
         List<Object[]> resultList = session.createQuery(hql2).getResultList();
         resultList.forEach(t-> System.out.println("t = " + Arrays.toString(t)));
+
+        System.out.println("=================== Same result with get() ====================");
+        Student06 student06 = session.get(Student06.class, 1002);
+        System.out.println("student06.getBookList() = " + student06.getBookList());
 
 
 
