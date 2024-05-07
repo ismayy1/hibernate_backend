@@ -1,9 +1,11 @@
 package h11_cacheLevels;
 
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import javax.persistence.*;
 
 @Cacheable
-
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "Student11")
 
 @Entity
 @Table (name = "t_student11")

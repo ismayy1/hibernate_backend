@@ -19,9 +19,11 @@ public class RunnerFetch11 {
 
         System.out.println("======= First get Method =======");
         Student11 student1 = session.get(Student11.class, 1L);
+        System.out.println("student1 = " + student1);
 
         System.out.println("======= Second get Method =======");
         Student11 student2 = session.get(Student11.class, 1L);  // it's just received from the first query
+        System.out.println("student2 = " + student2);
 
 
 
@@ -33,7 +35,8 @@ public class RunnerFetch11 {
 
 
         System.out.println("======= Third get Method in second session =======");
-        Student11 student3 = session.get(Student11.class, 1L);
+        Student11 student3 = session2.get(Student11.class, 1L);
+        System.out.println("student3 = " + student3);
 
         tx2.commit();
         session2.close();
