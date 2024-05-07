@@ -30,6 +30,8 @@ public class runnerFetch09 {
         System.out.println("============ after the session is closed ============");
         System.out.println("=== you're able to print books properties, because you already delivered books with eager loading before the session is closed ===");
         System.out.println(student09.getBooks09List());
+        // to get book name
+        System.out.println(student09.getBooks09List().get(0).getName());
 
         sf.close();
 
