@@ -19,11 +19,11 @@ public class Student08 {
     private int grade;
 
     @ManyToMany
-    @JoinTable (
-            name = "student08_book08",
-            joinColumns = {@JoinColumn (name = "std_id")},
-            inverseJoinColumns = {@JoinColumn (name = "book_id")}
-    )
+//    @JoinTable (
+//            name = "student08_book08",
+//            joinColumns = {@JoinColumn (name = "std_id")},
+//            inverseJoinColumns = {@JoinColumn (name = "book_id")}
+//    )
     private List<Book08> book08List = new ArrayList<>();
 
     public int getId() {
