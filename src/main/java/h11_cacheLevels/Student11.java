@@ -2,6 +2,9 @@ package h11_cacheLevels;
 
 import javax.persistence.*;
 
+@Cacheable
+
+
 @Entity
 @Table (name = "t_student11")
 public class Student11 {
