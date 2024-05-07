@@ -16,7 +16,7 @@ public class Student09 {
 
     private int grade;
 
-    @OneToMany (mappedBy = "student")
+    @OneToMany (mappedBy = "student", cascade = CascadeType.ALL)
     private List<Books09> books09List = new ArrayList<>();
 
     public int getId() {
