@@ -1,14 +1,13 @@
 package h10_idGeneration;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table (name = "t_student10")
 public class Student10 {
 
     @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
@@ -18,9 +17,11 @@ public class Student10 {
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
+
+    // hence we set the 'strategy = GeneratedType.IDENTITY', we no longer need this set method for id
+//    public void setId(int id) {
+//        this.id = id;
+//    }
     public String getName() {
         return name;
     }
