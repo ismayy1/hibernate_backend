@@ -16,7 +16,7 @@ public class Student09 {
 
     private int grade;
 
-    @OneToMany (mappedBy = "student", cascade = CascadeType.ALL)
+    @OneToMany (mappedBy = "student", cascade = CascadeType.ALL, fetch = FetchType.EAGER)    // , fetch = FetchType.EAGER
     private List<Books09> books09List = new ArrayList<>();
 
     public int getId() {

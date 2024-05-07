@@ -13,7 +13,7 @@ public class Books09 {
 
     private String name;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY) // by default it's eager loading
     @JoinColumn (name = "std_id")
     private Student09 student;
 
