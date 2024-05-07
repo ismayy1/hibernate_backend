@@ -62,11 +62,11 @@ public class RunnerSave08 {
         book08List2.add(book1);
         student2.setBook08List(book08List2);
 
-        // set student for books
-        List<Student08> student08List = new ArrayList<>();
-        student08List.add(student2);
-        book5.setStudent08List(student08List);
-
+//          // we don't need this
+//        // set student for books
+//        List<Student08> student08List = new ArrayList<>();
+//        student08List.add(student2);
+//        book5.setStudent08List(student08List);
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Student08.class).addAnnotatedClass(Book08.class);
