@@ -7,7 +7,14 @@ import javax.persistence.*;
 public class Student10 {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+//    @GeneratedValue (strategy = GenerationType.SEQUENCE) // MySQL
+    @GeneratedValue (generator = "sequence", strategy = GenerationType.SEQUENCE) // PostgreSQL
+    @SequenceGenerator(
+            name = "sequence",  // should be the same as the name of generator in GeneratedValue property above
+            sequenceName = "student_sequence",  // name which will be used in DB
+            initialValue = 1000,    // starting number of id
+            allocationSize = 10 // default value is 50
+    )
     private int id;
 
     private String name;
