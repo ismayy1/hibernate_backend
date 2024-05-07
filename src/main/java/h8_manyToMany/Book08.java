@@ -15,7 +15,7 @@ public class Book08 {
 
     private String name;
 
-    @ManyToMany
+    @ManyToMany (mappedBy = "book08List")   // there will not be new table for book_student
     private List<Student08> student08List = new ArrayList<>();
 
     public int getId() {
