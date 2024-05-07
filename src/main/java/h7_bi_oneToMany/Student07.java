@@ -16,7 +16,8 @@ public class Student07 {
 
     private int grade;
 
-    @OneToMany (mappedBy = "student") // there'll be no foreign key in Student, hence 3rd table won't be created
+    @OneToMany (mappedBy = "student", cascade = CascadeType.REMOVE, orphanRemoval = true) // there'll be no foreign key in Student, hence 3rd table won't be created
+    // cascade = CascadeType.REMOVE => same thing as "orphanRemoval = true", the orphanRemoval is more strict
     private List<Book07> book07List = new ArrayList<>();
 
     public int getId() {
