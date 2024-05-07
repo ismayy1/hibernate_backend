@@ -13,7 +13,7 @@ public class Books09 {
 
     private String name;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn (name = "std_id")
     private Student09 student;
 

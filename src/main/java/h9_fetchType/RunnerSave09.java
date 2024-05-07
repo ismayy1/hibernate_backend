@@ -75,11 +75,12 @@ public class RunnerSave09 {
         session.save(student2);
         session.save(student3);
 
-        session.save(book1);
-        session.save(book2);
-        session.save(book3);
-        session.save(book4);
-        session.save(book5);
+        // we're not executing this bcs we added 'cascade = CascadeType.ALL' this property in the parent 'Student09' class on the relations field, (@OneToMany (mappedBy = "student", cascade = CascadeType.ALL))
+//        session.save(book1);
+//        session.save(book2);
+//        session.save(book3);
+//        session.save(book4);
+//        session.save(book5);
 
         tx.commit();
         session.close();
