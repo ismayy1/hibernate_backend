@@ -51,11 +51,9 @@ public class RunnerFetch12 {
         Student12 student5 = session.get(Student12.class, 11L); // if data is not in DB, it returns null
         System.out.println("======== End get() ========");
 
-
         if (student5 != null) {
             System.out.println("student5.getGrade() = " + student5.getGrade());
         }
-
 
         System.out.println("======== load() ========");
         Student12 student6 = session.load(Student12.class, 19L);    // creates fake obj, and sets the id 19
@@ -68,9 +66,6 @@ public class RunnerFetch12 {
         }
 
         System.out.println("=============== no exception ================");
-
-
-
 
 
         tx.commit();
