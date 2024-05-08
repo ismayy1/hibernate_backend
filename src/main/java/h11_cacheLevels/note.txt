@@ -1,0 +1,33 @@
+
+ 1. Requirements for Entity Class
+    1. @Entity annotation
+    2. @Id
+    3. Getter-Setter
+    4. Constructor
+    5. fields cannot be final
+    6. @Table
+    7. @Column
+
+ 2. FetchType
+    By default:
+        OneToOne  --> Eager
+        ManyToOne --> Eager
+        OneToMany --> Lazy
+        ManyToMany -->Lazy
+
+ 3. n+1 problem
+    to avoid it:
+       Fetch Type Eager (but suggested)
+       SQL/HQL queries
+       DTO Projection
+
+ 4. Hibernate Caching
+    first level Cache(default)
+    second level Cache(with some configuration)
+
+
+ 5. get vs load
+    load():  if we do not need obj immediately, and if we are sure that object is in DB, then use load ()
+            it act as lazy loading (will not hit DB)
+
+    get() : if you are not sure about obj exist in DB, or if you use obj immediately then use get
