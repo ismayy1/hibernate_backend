@@ -1,17 +1,13 @@
 package h14_hibernateLifeCicle2;
 
-import h12_get_load.Student12;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-public class RunnerSave14 {
+public class RunnerFetch14 {
     public static void main(String[] args) {
 
-        Employee14 employee1 = new Employee14();
-        employee1.setName("Mikail");
-        employee1.setSalary(5000.0);
 
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml")
@@ -22,15 +18,13 @@ public class RunnerSave14 {
         Transaction tx = session.beginTransaction();
 
 
-        System.out.println("************* session.save() executed *************");
-        session.save(employee1);
+        System.out.println("************* session.get() executed *************");
+        Employee14 employee1 = session.get(Employee14.class, 1L);
 
 
         tx.commit();
         session.close();
         sf.close();
-
-
 
     }
 }
