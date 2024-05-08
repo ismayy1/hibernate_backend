@@ -15,7 +15,7 @@ public class RunnerSave13 {
 
 
         Configuration con = new Configuration().configure("hibernate.cfg.xml")
-                .addAnnotatedClass(Student12.class);
+                .addAnnotatedClass(Student13.class);
 
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
