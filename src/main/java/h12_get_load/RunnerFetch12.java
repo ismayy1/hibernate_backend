@@ -15,5 +15,17 @@ public class RunnerFetch12 {
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
 
+
+        System.out.println("======== Start Executing get() ========");
+        Student12 student1 = session.get(Student12.class, 1L);
+        System.out.println("======== End Executing get() ========");
+
+
+
+
+        tx.commit();
+        session.close();
+        sf.close();
+
     }
 }
